@@ -3,7 +3,7 @@
 Console.Write("Введите число: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
-for( int a = 2; a<num; a = a + 2)
+for( int a = 2; a<=num; a = a + 2)
 {
     if( a!= 2 )
         Console.Write(", ");
