@@ -9,7 +9,7 @@ if (num < 100 || num >= 1000)
 }
 else
 {
-    int num2 = (num % 100 - num % 10) / 10; 
+    int num2 = num % 100 / 10; 
     Console.WriteLine(num2);
 }
 
