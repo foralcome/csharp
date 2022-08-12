@@ -24,4 +24,3 @@ else
         Console.WriteLine("Ура! Выходной!");
     }
 }
-
