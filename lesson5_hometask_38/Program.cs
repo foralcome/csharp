@@ -88,5 +88,5 @@ else
     Console.WriteLine($"Минимальное значение {min} максимальное значение {max}");
 
     int dif = max - min;
-    Console.WriteLine($"Разница минимального и минимального значений {dif}");
+    Console.WriteLine($"Разница максимального и минимального значений {dif}");
 }
