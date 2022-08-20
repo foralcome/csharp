@@ -75,7 +75,7 @@ if( size<=0 )
 }
 else
 {
-    int []array = FillArray(size);
+    int []array = FillArray(size, -100, 100);
     PrintArray(array);
 
     int min = GetMinValue(array);
