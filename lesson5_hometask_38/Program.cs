@@ -86,4 +86,7 @@ else
 
     int [] minmax = GetMinMaxValue(array);
     Console.WriteLine($"Минимальное значение {min} максимальное значение {max}");
+
+    int dif = max - min;
+    Console.WriteLine($"Разница минимального и минимального значений {dif}");
 }
