@@ -40,7 +40,7 @@ double GetAvgInRowArray2d(int[,] array2d, int irow)
 {
     if (irow < 0 || irow >= array2d.GetLength(0))
         {
-            throw new IndexOutOfRangeException($"Номер строки должен быть диапазоне от 0 до " + (array2d.GetLength(0) - 1) + " включительно!");
+            throw new IndexOutOfRangeException($"Номер строки должен быть в диапазоне от 0 до " + (array2d.GetLength(0) - 1) + " включительно!");
         }    
     int sum = 0;
     for (int j = 0; j < array2d.GetLength(1); j++)
@@ -75,7 +75,7 @@ else
             int iRow = int.Parse(Console.ReadLine());
             if (iRow < 0 || iRow >= array2d.GetLength(0))
             {
-                throw new IndexOutOfRangeException($"Номер строки искомого элемента должен быть диапазоне от 0 до " + (array2d.GetLength(0) - 1) + " включительно!");
+                throw new IndexOutOfRangeException($"Номер строки искомого элемента должен быть в диапазоне от 0 до " + (array2d.GetLength(0) - 1) + " включительно!");
             }
             double avgRow = GetAvgInRowArray2d(array2d, iRow);
             Console.WriteLine($"Ср.арифметическое строки {iRow}: {Math.Round(avgRow,2)}");
