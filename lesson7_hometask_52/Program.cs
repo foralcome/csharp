@@ -70,15 +70,13 @@ else
         try
         {
             Console.WriteLine();
-            Console.WriteLine("РЕЖИМ: получение среднего арифметического строки");
-            Console.Write("Введите номер строки: ");
-            int iRow = int.Parse(Console.ReadLine());
-            if (iRow < 0 || iRow >= array2d.GetLength(0))
-            {
-                throw new IndexOutOfRangeException($"Номер строки искомого элемента должен быть в диапазоне от 0 до " + (array2d.GetLength(0) - 1) + " включительно!");
+            Console.WriteLine("РЕЖИМ: получение среднего арифметического строк");
+            double avgRow = 0.0;
+            for (int iRow = 0; iRow < array2d.GetLength(0); iRow++)
+                {
+                avgRow = GetAvgInRowArray2d(array2d, iRow);
+                Console.WriteLine($"Ср.арифметическое строки {iRow}: {Math.Round(avgRow,2)}");
             }
-            double avgRow = GetAvgInRowArray2d(array2d, iRow);
-            Console.WriteLine($"Ср.арифметическое строки {iRow}: {Math.Round(avgRow,2)}");
         }
         catch( Exception ex)
         {
