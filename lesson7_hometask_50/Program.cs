@@ -41,11 +41,11 @@ int GetValueInArray2dByIndex(int[,] array, int irow, int icolumn)
 {
     if (irow < 0 || irow >= array.GetLength(0))
     {
-        throw new IndexOutOfRangeException($"Номер строки искомого элемента должен быть диапазоне от 0 до " + (array.GetLength(0) - 1) + " включительно!");
+        throw new IndexOutOfRangeException($"Номер строки искомого элемента должен быть в диапазоне от 0 до " + (array.GetLength(0) - 1) + " включительно!");
     }
     if (icolumn < 0 || icolumn >= array.GetLength(1))
     {
-        throw new IndexOutOfRangeException($"Номер столбца искомого элемента должен быть диапазоне от 0 до " + (array.GetLength(1) - 1) + " включительно!");
+        throw new IndexOutOfRangeException($"Номер столбца искомого элемента должен быть в диапазоне от 0 до " + (array.GetLength(1) - 1) + " включительно!");
     }
     return array[irow, icolumn];
 }
@@ -69,18 +69,18 @@ else
         try
         {
             Console.WriteLine();
-            Console.WriteLine("РЕЖИМ: получение занчения элемента 2d массива по индексу");
+            Console.WriteLine("РЕЖИМ: получение значения элемента 2d массива по индексу");
             Console.Write("Введите номер искомой строки: ");
             int findRow = int.Parse(Console.ReadLine());
             if (findRow < 0 || findRow >= array2d.GetLength(0))
             {
-                throw new IndexOutOfRangeException($"Номер строки искомого элемента должен быть диапазоне от 0 до " + (array2d.GetLength(0) - 1) + " включительно!");
+                throw new IndexOutOfRangeException($"Номер строки искомого элемента должен быть в диапазоне от 0 до " + (array2d.GetLength(0) - 1) + " включительно!");
             }
             Console.Write("Введите номер искомого столбца: ");
             int findColumn = int.Parse(Console.ReadLine());
             if (findColumn < 0 || findColumn >= array2d.GetLength(1))
             {
-                throw new IndexOutOfRangeException($"Номер столбца искомого элемента должен быть диапазоне от 0 до " + (array2d.GetLength(1) - 1) + " включительно!");
+                throw new IndexOutOfRangeException($"Номер столбца искомого элемента должен быть в диапазоне от 0 до " + (array2d.GetLength(1) - 1) + " включительно!");
             }
 
             int findValue = GetValueInArray2dByIndex(array2d, findRow, findColumn);
