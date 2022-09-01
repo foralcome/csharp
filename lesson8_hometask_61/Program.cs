@@ -58,12 +58,10 @@ if (countRows <= 0)
 }
 else
 {
-    int[,] array2d = FillArray2dPaskalTriangle(countRows);
-    PrintArray2dPaskalTriangle(array2d);
-
     try
     {
-
+        int[,] array2d = FillArray2dPaskalTriangle(countRows);
+        PrintArray2dPaskalTriangle(array2d);
     }
     catch (Exception ex)
     {
