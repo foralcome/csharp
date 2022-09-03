@@ -17,20 +17,20 @@ void PrintRange(int numberStart, int numberStop)
     }
     Console.WriteLine();
 }
-void PrintRangeRecursion(int curentNumber, int stopNumber = 1)
+void PrintRangeRecursion(int curentNumber, int stopNumber = 10)
 {
-    if (curentNumber < stopNumber)
+    if (curentNumber > stopNumber)
     {
-        throw new ArgumentException($"Текущее число {curentNumber} должно быть больше или равно {stopNumber}!");
+        throw new ArgumentException($"Текущее число {curentNumber} должно быть меньше {stopNumber}!");
     }
     if (curentNumber == stopNumber)
     {
-        Console.Write($"{curentNumber}");
+        Console.WriteLine($"{curentNumber}");
     }
     else
     {
-        PrintRangeRecursion(curentNumber - 1);
-        Console.Write($",{curentNumber}");
+        Console.Write($"{curentNumber},");
+        PrintRangeRecursion(curentNumber + 1, stopNumber);
     }
 }
 
@@ -45,8 +45,7 @@ try
     Console.WriteLine($"Обычный вывод диапазона [{m},{n}]");
     PrintRange(m, n);
     Console.WriteLine($"Рекурсивный вывод диапазона [{m},{n}]");
-    PrintRangeRecursion(n, m);
-    Console.WriteLine();
+    PrintRangeRecursion(m, n);
 }
 catch (Exception ex)
 {
