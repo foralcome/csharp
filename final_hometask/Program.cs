@@ -51,8 +51,6 @@ string GetRandomString(int maxCountChars = 10)
 
         currentString += arrayChars[indexChar];
         countChars++;
-
-
     }
     return currentString;
 }
@@ -95,36 +93,21 @@ string[] FillArrayManual(int sizeArray = 10)
     return arrayString;
 }
 
-int GetCountStringsLess( string[] array, int maxLength=3)
-{
-    int countStrings = 0;
-    int sizeArray = array.Length;
-    string[] tmpArrayString = new string[sizeArray];
-    for (int index = 0; index < sizeArray; index++)
-    {
-        if(array[index].Length <= maxLength)
-        {
-            countStrings++;
-        }
-    }
-    return countStrings;
-}
-
-string [] GetStringsInArrayByMaxLenght( string[] array, int maxLength=3)
+string[] GetStringsInArrayByMaxLenght(string[] array, int maxLength = 3)
 {
     int sizeFinalArray = 0;
     int sizeArray = array.Length;
     string[] tmpArray = new string[sizeArray];
-    for (int index = 0, tmpIndex=0; index < sizeArray; index++)
+    for (int index = 0, tmpIndex = 0; index < sizeArray; index++)
     {
-        if(array[index].Length <= maxLength)
+        if (array[index].Length <= maxLength)
         {
             tmpArray[tmpIndex] = array[index];
             tmpIndex++;
             sizeFinalArray++;
         }
     }
-    
+
     string[] finalArray = new string[sizeFinalArray];
     for (int index = 0; index < sizeFinalArray; index++)
     {
@@ -136,7 +119,11 @@ string [] GetStringsInArrayByMaxLenght( string[] array, int maxLength=3)
 
 void PrintArrayString(string[] arrayString)
 {
-    Console.WriteLine("----- МАССИВ -------------------------"); 
+    Console.WriteLine("----- МАССИВ -------------------------");
+    if (arrayString.Length == 0)
+    {
+        Console.WriteLine("массив пуст");
+    }
     for (int i = 0; i < arrayString.Length; i++)
     {
         Console.WriteLine($"{(i + 1)}) " + arrayString[i]);
@@ -145,7 +132,7 @@ void PrintArrayString(string[] arrayString)
 
 void RunAutoTest()
 {
-    Console.WriteLine("----- 1) AUTO ТЕСТИРОВАНИЕ -----------"); 
+    Console.WriteLine("----- 1) AUTO ТЕСТИРОВАНИЕ -----------");
 
     Console.WriteLine("----- ЗАПОЛНЕНИЕ МАССИВА --------------");
     int sizeArrayString = 10;
@@ -162,8 +149,8 @@ void RunAutoTest()
 
 void RunManualTest()
 {
-    Console.WriteLine("----- 2) РУЧНОЕ ТЕСТИРОВАНИЕ ----------"); 
-    Console.WriteLine("----- ЗАПОЛНЕНИЕ МАССИВА --------------"); 
+    Console.WriteLine("----- 2) РУЧНОЕ ТЕСТИРОВАНИЕ ----------");
+    Console.WriteLine("----- ЗАПОЛНЕНИЕ МАССИВА --------------");
     Console.Write("Укажите размер массива строк: ");
     int sizeArrayString = int.Parse(Console.ReadLine());
     if (sizeArrayString <= 0)
@@ -175,7 +162,7 @@ void RunManualTest()
     PrintArrayString(array);
 
     Console.WriteLine("----- ПОИСК СТРОК ---------------------");
-        Console.Write("Максимальная длина строки: ");
+    Console.Write("Максимальная длина строки: ");
     int maxLengthString = int.Parse(Console.ReadLine());
     if (maxLengthString <= 0)
     {
